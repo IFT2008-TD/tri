@@ -97,8 +97,8 @@ void aux_fusion(std::vector<T>& v, std::vector<T>& aux, size_t d, size_t mid, si
         ++idx ;
     }
 
-    if (idx_gauche == mid) for (; idx_droite != f; ++idx_droite, ++idx) aux[idx] = v[idx_droite] ;
-    else for (; idx_gauche != mid; ++idx_gauche, ++idx) aux[idx] = v[idx_gauche] ;
+    for (; idx_droite != f; ++idx_droite, ++idx) aux[idx] = v[idx_droite] ;
+    for (; idx_gauche != mid; ++idx_gauche, ++idx) aux[idx] = v[idx_gauche] ;
 
     std::move(aux.begin(), aux.begin() + len, v.begin() + d) ;
 }
